@@ -4,7 +4,7 @@ export const SearchPage = () => {
   return (
     <>
       <CustomJumbotron
-        title="Superheroes Universe"
+        title="Superheroes Search"
         description="Discover, explore, and manage your favorite superheroes and villains"
       />
     </>
