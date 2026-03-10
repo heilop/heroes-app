@@ -15,8 +15,6 @@ export const SearchPage = () => {
         breadcrumbs={
           [
             { label: 'Home 1', to: '/' },
-            { label: 'Home 2', to: '/' },
-            { label: 'Home 3', to: '/' },
           ]
         }
       />
