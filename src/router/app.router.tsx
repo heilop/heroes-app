@@ -6,6 +6,7 @@ import { AdminPage } from '@/admin/pages/AdminPage';
 import { HeroesLayout } from '@/heroes/layouts/HeroesLayout';
 import { HeroPage } from '@/heroes/pages/hero/pages/HeroPage';
 import { HomePage } from '@/heroes/pages/home/HomePage';
+import { Navigate } from 'react-router';
 // import { SearchPage } from '@/heroes/pages/search/SearchPage';
 
 const SearchPage = lazy(() => import('@/heroes/pages/search/SearchPage'));
@@ -17,15 +18,20 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <HomePage />,
       },
       {
-        path: 'heroes/1',
-        element: <HeroPage />
+        path: 'heroes/:idSlug',
+        element: <HeroPage />,
       },
       {
         path: 'search',
-        element: <SearchPage />
+        element: <SearchPage />,
+      },
+      {
+        path: '*',
+        // element: <h1>404: Page not found</h1>
+        element: <Navigate to='/' />,
       },
     ]
   },
