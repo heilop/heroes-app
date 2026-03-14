@@ -10,6 +10,7 @@ import { HeroGrid } from "@/heroes/components/HeroGrid"
 import { CustomPagination } from "@/components/custom/CustomPagination"
 import CustomBreadCrumb from "@/components/custom/CustomBreadcrumbs"
 import { getHeroresByPageAction } from "@/heroes/actions/get-heroes-by-page.action"
+import { getSummaryAction } from "@/heroes/actions/get-summary.action"
 
 export const HomePage = () => {
 
@@ -31,6 +32,12 @@ export const HomePage = () => {
     queryKey: ['heroes', { limit, page }],
     queryFn: () => getHeroresByPageAction(page, limit),
     staleTime: 1000 * 60 * 5,
+  });
+
+  const { data: summary } = useQuery({
+    queryKey: ['query-information'],
+    queryFn: getSummaryAction,
+    staleTime: 1000 * 60 * 5, // 5 mins
   });
 
   // useEffect(() => {
@@ -63,7 +70,7 @@ export const HomePage = () => {
                 })
               }}
             >
-              All Characters ({ heroesResponse?.total ?? 0 })
+              All Characters ({ summary?.totalHeroes })
             </TabsTrigger>
             <TabsTrigger
               value="favorites"
@@ -87,7 +94,7 @@ export const HomePage = () => {
                 })
               }}
             >
-              Heroes (12)
+              Heroes ({ summary?.heroCount })
             </TabsTrigger>
             <TabsTrigger
               value="villains"
@@ -98,7 +105,7 @@ export const HomePage = () => {
                 })
               }}
             >
-              Villains (2)
+              Villains ({ summary?.villainCount })
             </TabsTrigger>
           </TabsList>
 
