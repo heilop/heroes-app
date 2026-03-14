@@ -1,6 +1,5 @@
 import { useMemo } from "react"
 import { useSearchParams } from "react-router"
-import { useQuery } from "@tanstack/react-query"
 
 import { Heart } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -9,8 +8,8 @@ import { HeroStats } from "@/heroes/components/HeroStats"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
 import { CustomPagination } from "@/components/custom/CustomPagination"
 import CustomBreadCrumb from "@/components/custom/CustomBreadcrumbs"
-import { getHeroresByPageAction } from "@/heroes/actions/get-heroes-by-page.action"
-import { getSummaryAction } from "@/heroes/actions/get-summary.action"
+import { useHeroSummary } from "@/heroes/hooks/useHeroSummary"
+import { usePaginationHero } from "@/heroes/hooks/usePaginationHero"
 
 export const HomePage = () => {
 
@@ -28,21 +27,8 @@ export const HomePage = () => {
   // const [activeTab, setActiveTab] = useState<'all' | 'favorites' | 'heroes' | 'villains'
   //   >('all');
 
-  const { data: heroesResponse } = useQuery({
-    queryKey: ['heroes', { limit, page }],
-    queryFn: () => getHeroresByPageAction(page, limit),
-    staleTime: 1000 * 60 * 5,
-  });
-
-  const { data: summary } = useQuery({
-    queryKey: ['query-information'],
-    queryFn: getSummaryAction,
-    staleTime: 1000 * 60 * 5, // 5 mins
-  });
-
-  // useEffect(() => {
-  //   getHeroresByPageAction().then();
-  // }, []);
+  const { data: heroesResponse } = usePaginationHero(limit, page);
+  const { data: summary } = useHeroSummary();
 
   return (
     <>
