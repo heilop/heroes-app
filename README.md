@@ -71,3 +71,17 @@ export default defineConfig([
   },
 ])
 ```
+
+
+## Start backend server
+
+### Standard
+```bash
+npm run start:dev
+```
+
+
+### Backend server for testing
+```bash
+PORT=3001 npm run start:dev
+```
