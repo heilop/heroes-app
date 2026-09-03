@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
-import { getHeroresByPageAction } from './get-heroes-by-page.action';
+import { getHeroesByPageAction } from './get-heroes-by-page.action';
 import { heroApi } from '../api/hero.api';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -29,7 +29,7 @@ describe('getHeroesByPageAction', () => {
       ]
     });
 
-    const response = await getHeroresByPageAction(1);
+    const response = await getHeroesByPageAction(1);
     expect(response).toStrictEqual({
       total: 10,
       pages: 2,
@@ -50,7 +50,7 @@ describe('getHeroesByPageAction', () => {
 
     heroApiMock.onGet('/').reply(200, responseObject);
 
-    await getHeroresByPageAction('abc' as unknown as number);
+    await getHeroesByPageAction('abc' as unknown as number);
     const params = heroApiMock.history.get[0].params;
     expect(params).toStrictEqual({
       limit: 6,
@@ -69,7 +69,7 @@ describe('getHeroesByPageAction', () => {
 
     heroApiMock.onGet('/').reply(200, responseObject);
 
-    await getHeroresByPageAction('5' as unknown as number);
+    await getHeroesByPageAction('5' as unknown as number);
     const params = heroApiMock.history.get[0].params;
     expect(params).toStrictEqual({
       limit: 6,
@@ -88,7 +88,7 @@ describe('getHeroesByPageAction', () => {
 
     heroApiMock.onGet('/').reply(200, responseObject);
 
-    await getHeroresByPageAction(2, 10, 'heroes');
+    await getHeroesByPageAction(2, 10, 'heroes');
     const params = heroApiMock.history.get[0].params;
     expect(params).toStrictEqual({
       limit: 10,

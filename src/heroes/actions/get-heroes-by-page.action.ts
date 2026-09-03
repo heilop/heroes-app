@@ -3,7 +3,7 @@ import type { HeroesResponse } from "../types/get-heroes.response";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-export const getHeroresByPageAction = async (
+export const getHeroesByPageAction = async (
   page: number,
   limit: number = 6,
   category: string = 'all',
