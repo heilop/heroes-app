@@ -1,0 +1,166 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`appRouter > should be confiured as expected 1`] = `
+{
+  "_internalFetchControllers": Map {},
+  "_internalSetRoutes": [Function],
+  "_internalSetStateDoNotUseOrYouWillBreakYourApp": [Function],
+  "basename": "/",
+  "createHref": [Function],
+  "deleteBlocker": [Function],
+  "deleteFetcher": [Function],
+  "dispose": [Function],
+  "enableScrollRestoration": [Function],
+  "encodeLocation": [Function],
+  "fetch": [Function],
+  "future": {},
+  "getBlocker": [Function],
+  "getFetcher": [Function],
+  "initialize": [Function],
+  "navigate": [Function],
+  "patchRoutes": [Function],
+  "resetFetcher": [Function],
+  "revalidate": [Function],
+  "routes": [
+    {
+      "children": [
+        {
+          "element": <HomePage />,
+          "hasErrorBoundary": false,
+          "id": "0-0",
+          "index": true,
+        },
+        {
+          "children": undefined,
+          "element": <HeroPage />,
+          "hasErrorBoundary": false,
+          "id": "0-1",
+          "path": "heroes/:idSlug",
+        },
+        {
+          "children": undefined,
+          "element": <UNDEFINED />,
+          "hasErrorBoundary": false,
+          "id": "0-2",
+          "path": "search",
+        },
+        {
+          "children": undefined,
+          "element": <Navigate
+            to="/"
+          />,
+          "hasErrorBoundary": false,
+          "id": "0-3",
+          "path": "*",
+        },
+      ],
+      "element": <HeroesLayout />,
+      "hasErrorBoundary": false,
+      "id": "0",
+      "path": "/",
+    },
+    {
+      "children": [
+        {
+          "element": <AdminPage />,
+          "hasErrorBoundary": false,
+          "id": "1-0",
+          "index": true,
+        },
+      ],
+      "element": <AdminLayout />,
+      "hasErrorBoundary": false,
+      "id": "1",
+      "path": "/admin",
+    },
+  ],
+  "state": {
+    "actionData": null,
+    "blockers": Map {},
+    "errors": null,
+    "fetchers": Map {},
+    "historyAction": "POP",
+    "initialized": true,
+    "loaderData": {},
+    "location": {
+      "hash": "",
+      "key": "default",
+      "pathname": "/",
+      "search": "",
+      "state": null,
+      "unstable_mask": undefined,
+    },
+    "matches": [
+      {
+        "params": {},
+        "pathname": "/",
+        "pathnameBase": "/",
+        "route": {
+          "children": [
+            {
+              "element": <HomePage />,
+              "hasErrorBoundary": false,
+              "id": "0-0",
+              "index": true,
+            },
+            {
+              "children": undefined,
+              "element": <HeroPage />,
+              "hasErrorBoundary": false,
+              "id": "0-1",
+              "path": "heroes/:idSlug",
+            },
+            {
+              "children": undefined,
+              "element": <UNDEFINED />,
+              "hasErrorBoundary": false,
+              "id": "0-2",
+              "path": "search",
+            },
+            {
+              "children": undefined,
+              "element": <Navigate
+                to="/"
+              />,
+              "hasErrorBoundary": false,
+              "id": "0-3",
+              "path": "*",
+            },
+          ],
+          "element": <HeroesLayout />,
+          "hasErrorBoundary": false,
+          "id": "0",
+          "path": "/",
+        },
+      },
+      {
+        "params": {},
+        "pathname": "/",
+        "pathnameBase": "/",
+        "route": {
+          "element": <HomePage />,
+          "hasErrorBoundary": false,
+          "id": "0-0",
+          "index": true,
+        },
+      },
+    ],
+    "navigation": {
+      "formAction": undefined,
+      "formData": undefined,
+      "formEncType": undefined,
+      "formMethod": undefined,
+      "json": undefined,
+      "location": undefined,
+      "state": "idle",
+      "text": undefined,
+    },
+    "preventScrollReset": false,
+    "renderFallback": false,
+    "restoreScrollPosition": null,
+    "revalidation": "idle",
+  },
+  "subscribe": [Function],
+  "window": [Object],
+}
+`;
