@@ -45,7 +45,7 @@ describe('usePaginationHero', () => {
     expect(current.data).toBeUndefined();
   });
 
-  test('should return sucess state with data when API call succeeds', async () => {
+  test('should return success state with data when API call succeeds', async () => {
     const mockHeroesData = {
       total: 20,
       pages: 4,
@@ -64,7 +64,7 @@ describe('usePaginationHero', () => {
 
     expect(result.current.status).toBe('success');
     expect(mockGetHeroesByPageAction).toHaveBeenCalled();
-    expect(mockGetHeroesByPageAction).toHaveBeenCalledWith(6, 1, 'all');
+    expect(mockGetHeroesByPageAction).toHaveBeenCalledWith(1, 6, 'all');
   });
 
   test('should call getHeroesByPageAction with arguments', async () => {
@@ -86,6 +86,6 @@ describe('usePaginationHero', () => {
 
     expect(result.current.status).toBe('success');
     expect(mockGetHeroesByPageAction).toHaveBeenCalled();
-    expect(mockGetHeroesByPageAction).toHaveBeenCalledWith(6, 1, 'heroes');
+    expect(mockGetHeroesByPageAction).toHaveBeenCalledWith(1, 6, 'heroes');
   });
 });

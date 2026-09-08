@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getHeroesByPageAction } from '../actions/get-heroes-by-page.action';
 
-export const usePaginationHero = (limit: number, page: number, category: string = 'all') => {
+export const usePaginationHero = (page: number, limit: number, category: string = 'all') => {
   return useQuery({
     queryKey: ['heroes', { page, limit, category }],
     queryFn: () => getHeroesByPageAction(page, limit, category),

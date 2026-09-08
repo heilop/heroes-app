@@ -31,7 +31,7 @@ export const HomePage = () => {
   // const [activeTab, setActiveTab] = useState<'all' | 'favorites' | 'heroes' | 'villains'
   //   >('all');
 
-  const { data: heroesResponse } = usePaginationHero(limit, page, category);
+  const { data: heroesResponse } = usePaginationHero(page, limit, category);
   const { data: summary } = useHeroSummary();
 
   return (
