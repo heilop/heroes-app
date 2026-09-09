@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { fireEvent, getByText, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { describe, expect, test, vi } from 'vitest';
 import { CustomPagination } from './CustomPagination';
